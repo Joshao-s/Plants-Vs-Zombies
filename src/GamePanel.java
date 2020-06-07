@@ -80,7 +80,7 @@ public class GamePanel extends JLayeredPane implements MouseMotionListener {
         setLayout(null);
         addMouseMotionListener(this);
         this.sunScoreboard = sunScoreboard;
-        setSunScore(5000);  //pool avalie
+        setSunScore(150);  //pool avalie
 
         bgImage = new ImageIcon(this.getClass().getResource("images/mainB.png")).getImage();
         pauseImage = new ImageIcon(this.getClass().getResource("images/Button2.png")).getImage();
@@ -207,7 +207,7 @@ public class GamePanel extends JLayeredPane implements MouseMotionListener {
         zombiesComing.prepare();
 
         
-        loseTimer = new Timer(0, (ActionEvent e) -> {
+        loseTimer = new Timer(25, (ActionEvent e) -> {
             boolean haslose=false;
             for(int i=0;i<5;i++){
                 for(int j=0;j<laneZombies.get(i).size();++j){
@@ -230,7 +230,7 @@ public class GamePanel extends JLayeredPane implements MouseMotionListener {
         });
         loseTimer.start();
         
-        winTimer = new Timer(0, (ActionEvent e) -> {
+        winTimer = new Timer(25, (ActionEvent e) -> {
 
             /*
             if (progress >= 150) {
